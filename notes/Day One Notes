@@ -1,0 +1,34 @@
+VS CODE
+    text editor/IDE for languages
+    VS Code can open folders as well as files
+    we can configure its built in terminal to be Git Bash instead 
+    of the default Powershell.
+NET CORE SDK
+    Helps us compile and run C#
+bash is a shell program that lets us run many programs
+    using a text-based interface.
+git clone
+    clones repository 
+git pull
+    updates repository
+dotnet new console -o HelloWorld
+    makes a new project folder for dotnet
+dotnet run -p HelloWorld
+    to run the dotnet program 
+
+Contact info:
+Trainer: Nick Escalona:
+Nick.escalona@revature.com
+He needs to know if im gonna be late or sick.
+
+.net curriculum (full stack developer)
+Programming skills:
+Mainly C #
+ASP.NET, ADO.NET
+Javascript,Angular
+SQL,Database
+WCF, REST, SOAP
+AWS,Azure windows server
+DevOps: Jira, Jenkins, Maven, SonarQube, GitHub, Docker, Kubernetes
+
+Minimum 4 projects. Max 7 projects.

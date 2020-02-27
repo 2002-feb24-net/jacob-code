@@ -1,0 +1,52 @@
+[command/program] ([subcommands]) (--option-one)
+e.g. mkdir                          -o
+    dotnet                          -m "message
+    git             pull            -o HelloWorld
+
+dotnet new console --output-dir HelloWorld
+
+pwd = print working directory
+explorer = opens window explorer
+. = current folder
+explorer . = opens current folder in explorer
+.. = parent directory
+absolute paths
+    start with /
+    means the same no matter your current folder
+    e.g. /c/revature/trainer-code
+environment variable
+    PATH 
+    $ refers to variable
+
+    | pipes commands (joins commands)
+    > redirects output of command 
+    >> appends to the end of the file
+    * stands for 0 or more of any character.
+e.g. echo "some text" | grep text
+ls -1 | grep o 
+grep grep notes/bash/bash-notes.text
+
+tab completion
+    autofills a file path given
+double tab
+    lists all available files at current file path given
+
+.net at a high level
+- .NET Framework 2002 used to make any application on windows
+Started as windows only
+desktop apps: WinForms, WPF
+databases: Entity Framework
+webstuff: ASP.NET, WCF
+- Mono 
+Linux reverse-engineer of .NET
+Xamarin (mobile)
+- .NET Core 2016
+Total reimplementation of .net framework to work on cross platform
+EF Core (week 4)
+ASP.NET Core (Week 5 and 7)
+
+All three frameworks use C#.
+Future: .Net 5
+
+
+

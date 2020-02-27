@@ -1,0 +1,22 @@
+git. :
+-version control system (VCS)
+-source control management (SCM) tool
+
+repository
+->.git/
+->reguar_files.txt
+
+1. make changes to repository
+2. record those changes in git locally
+git add <path>
+git commit -m "description of changes"
+3. Upload recorded changes to remote(github) 
+git push
+
+error: 
+1.copy out any files you're worried about
+2.delete repo 
+3.clone
+
+ask git what is going on in the repo:
+git status
