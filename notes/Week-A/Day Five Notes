@@ -14,7 +14,7 @@ C#:
 -start at main method
 -methods (return types, parameters)
 -variables (declare, initialize, scope)
--value types: int, double, string, bool, arrays
+-value types: int, double, bool
 -reference types: string, arrays
 - variables: camelCase
 - everything else: PascalCase
