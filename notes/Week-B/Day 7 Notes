@@ -1,0 +1,7 @@
+object oriented idea: combining related data and logic/behavior to make a class/object
+static does not require an object instance. One copy of that thing for the whole program.
+non-static/instance exist on one particular object at a time.
+A class serves as a template to create an object.
+Class members are private by default. Only the class can see them. We can change them to public instead.
+
+DRY principle: don't repeat yourself
