@@ -1,0 +1,9 @@
+List                HashSet
+Generic             Generic
+Ordered             Unordered
+Can have            Does not allow
+duplicates          duplicates
+can change size     can change size
+based on array      based on hashtable (hashfunction turns the keys into numbers, numbers point to entries)
+slow to search      fast to search/check membership (dont need to search whole table, just check the table for hashcode)
+O(n)                O(1)
