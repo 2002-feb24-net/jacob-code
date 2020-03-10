@@ -1,0 +1,9 @@
+Recommended git steps:
+git clone url
+create and checkout feature branch
+git checkout -b [branchname]
+make changes then use add to track changes
+git add .
+git commit -m "message"
+git push
+on github make a pull request to pull your changes into the master

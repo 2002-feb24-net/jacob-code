@@ -1,0 +1,154 @@
+03/10/2020
+
+Source Control Management: 
+How you manage different versions of your code (github)
+Version Control Management is also known as source code management or revision control system.
+DVCS: Distributed VCS 
+-A peer to peer model
+-no locking parts
+-code is distrubuted amongs individual developers computers
+-more collaborative
+-(github)
+CVCS: Centralized VCS
+-a client server model
+-locking parts
+-more exclusive
+
+.Net Architectural Components:
+The .Net Standard is an API specification for all .Net APIs. 
+-A uniform set of contracts that you compile your code against. 
+-It enables portability accross different .Net implementations which allows your code to run everywhere.
+-.Net standards are additive. Higher version, more APIs available. Lower version, More platforms implement it.
+-Immutable: Once finalized, .Net standard versions are frozen
+-The primary distribution for .Net Standards is in a Nuget Package.
+
+.Net Framework structure is Common Language Runtime which handles code during execution
+Base Class Library contains runtime libraries
+ADO.NET and XML access data, send data.
+ASP.NET and Windows Forms build robust web applications and windows applcations.
+Common Language Specification (CLS)
+Ruleset that allows cross language integration. Makes languages adapt to the .NET Platform.
+
+Four primary .NET impementations:
+.NET Core, .NET Framework, Mono, and UWP.
+They each contain runtimes, class libraries, and application frameworks.
+.NET Framework is the original .NET implementation.
+.NET Core is a cross platform implementation of .NET, designed to handle server and cloud workloads at scale.
+.NET Core uses .NET Standard. 
+Mono is useful for programs with a small footprint. Mainly for small runtime.
+Like mobile stuff. Lightweight and quick.
+UWP is an implementation of .NET that is used for touch enabled windows apps and software for IOT.
+
+A runtime is the execution environment for a managed program.
+OS is a part of runtime environment but not .NET runtime.
+For .NET Core we use the Core Common Language Runtime (CoreCLR)
+Xamarain is used for mobile.
+
+C# Code structure:
+Dont start jumping into design. Have a clear plan and path on how you want to structure your code.
+Procedural programming is a programming paradigm derived from structured programming.
+Namespaces provide a hierarchical means of organizing C# programs and libraries.
+Namespaces contain types and other anmespaces.
+A using directive allows use of all type members of that namespace.
+By required convention, a satic method named Main serves as a entry point of a program.
+C# key organizational concepts are programs, namespaces, types, members and assemblies.
+When C# programs are compiled, they are physically packaged into assemblies with file extensions .exe or .dll
+
+Data types:
+Value types: Built in primitive data types. These types directly contain their data.
+Reference types: classes and complex data types that are constructed from their primitive types.
+They contain a reference to a location in memory where the data is directly held. (references are objects)
+The variables are held in the stack. Value types hold their data in the stack. Reference types point to 
+the data held in the heap.
+Experessions are constructed from operands and operators. Operators: +,-,*/,new
+Operands: literals, fields, local variables, Experessions (what the operators act on)
+Any actions of a program are expressed using statements.
+A block permits multiple statements to be written in contexts where a single statement is allowed. {}
+Declaration statements are used to declare local variables and constants.
+Expression statements are used to evaluate expressions. Method invocation, allocate objects, Expressions.
+Selection statements are used to select one of a number of possible statements for execution (if and switch)
+Iteration statements are used to execute repeatedly an embedded statement (while,do,for,foreach)
+Jump Statements are used to transfer control (break, continue, goto, throw, return, yield)
+Methods is a code block that contains a series of statements. 
+Method signature contains: access level, modifiers, return value, method name, method parameters.
+Methods have two forms. Instance methods where an object must be instantiated. Or a static method.
+
+.NET Solution
+A project is contained within a solution. A solution is a container for one or more related projects along
+with build information. A solution is described by a text file (.sln) with its own unique format.
+A project containes source code, icons, iages, data files, etc.
+Visual studio uses MSBuild to build each project in a solution.
+MSBuild project file is in the project as a .csproj
+The project file is an xml document that contains all the information and instructions that MSBuild needs 
+in order to build the project.
+Assemblies is a collection of types and resources that are built to work together and form a logical unit of functionality.
+-Take the form of executable or dynamic link library files.
+An assembly is a container of a solution of multiple projects/files. Assemblies provide CLR with type implementations.
+When a project is compiled it is combined into one big dll file (assembly).
+
+Assembly:
+-Code that the CLR executes: Each assembly can havve only on entry point (main)
+-Security boundary: an assembly unit at which permissions are requested and granted.
+-Version boundary: The assembly is the smallest versionable unit in the CLR.
+-Deployment unit: When an application starts, on the assemblies that the application initially calls must be present. 
+Other assemblies are retrieved on demand.
+
+Common Language Infrastructure (CLI) is an open specification standard. It describes executable code and the runtime environment.
+This enables a program to be written in any of the commonly used programming languages to be run on any operating system
+using a common runtime program rather than a language specific one.
+Code is compiled -> compiled into a common managed assembly (intermediate language) -> Virtual execution system -> OS
+CLI allows you to design a language that can be used in the framework of .NET 
+The CTS (Common Type System) is used by CLR to enforce strict type and code verification.
+CTS provides a library of basic primitive data types ot be used in application development.
+CLS (Common Langauge Specification) defines a set of features that are needed by many common applications.
+It also defines a set of rules/restrictions that evvery language must follow under .NET framework.
+CIL (Common Intermediate Language) is the intermediate language binary instruction set defined within CLI.
+CLI Languages are compiled to CIL.
+JIT (Just In Time Compiler or Dynamic Translation) involves computation during execution of a program rather than before execution.
+JIT compilation assumes that some code might never be called during execution. It compiles as needed instead of compiling all at once.
+Compiles as you need it.
+VES (Virtual Execution System) a runtime system of CLI that provides an environment for executing managed code where the CIL instruction set can be executed.
+The CLR is the .NET Framework's implementation of a VES. It provides a direct support for a set of built in data types.
+
+Common Language Runtime (CLR) is a managed execution environment that is a part of .NET Framework.
+CLR manages the execution of programs written in different supported languages. CLR transforms source code into a form of bytecode known as CIL.
+.NET framework consists of the CLR and the .NET framework class library.
+CLR manages/runs code and provides services like memory management, remoting, type enforcement, security, etc.
+BCL (Base class library) is the foundation for C# runtime library and one of the CLI standard libraries. 
+BCL provides types representing the built in CLI data types, basic file access, collections, etc.
+A class library is a collection of reuseable types.
+CoreFX is a fork of Framework's BCL. CoreFX is the foundational class library for .NET Core.
+It defines the types for primitives, collections, file systems, console, json, xml, etc.
+CoreFX makes up the .NET Core BCL.
+Managed code is managed by CLR at runtime. CLR provides memory management, type safety, security boundaries etc. CLR knows what your code is doing and can manage it.
+Managed code: a lot of stuff on runtime is taken care of by CLR. C# is managed code. 
+Unmanaged code runs outside of CLR. Like C. 
+Garbage Collector (GC) has no knowledge of unmanaged resources. (window handles, open files and streams)
+A using block provides convenient syntax that ensures the correct use of IDisposable objects. using statement calls Dispose method.
+Essentially initialize some variables and then dispose of the variables after the block is done. Useful for file streams.
+
+Data types:
+No primitive types in C# because they are actually objects in C#.
+All data types inherit from the base Class Object. When an int is declared, you are declaring an instance of struct 'int'.
+C# supports Value types and Reference types.
+Value types: built in primitive data types. As well as user defined types declared with struct.
+Reference types: Classes and other complex data types that are constructed from primitive types. A reference to an instance.
+An enumeration type (or enum type) is a value type defined by a set of named constants of underlying integral numeric type. Enums are immutable.
+A structure type (or struct type) is a value type that can encapsulate data and related functionality. Structs are not inherited.
+A class is a reference type.
+An interface dfines a contract. Any class or struct that implements a contract must provide an implementation of the members defined in the interface.
+An interface contains definitions for a group of related functionalities that a non-abstracct class or a struct must implement.
+A delefate type represents references to methods with a particular parameter list and return type.
+An object is a reference type. You can assign values of any type to variables of type object. when a value type is converted to an object it is considered to be boxed.
+A object converted to a value type is said to be unboxed.
+String is a reference type that represents a sequence of unicode characters. strings are immutable.
+
+Garbage Collection:
+.NET's garbage collector manages the allocation and release of memory for your application. 
+Each process (program) has 2 GB of virtual memory allocated.
+In C# you cant decide where or how memory is allocated during the process.
+Garbage collector allocates and frees memory.
+Benefits of GC: Dont worry about memory leaks. Efficient Memory allocation. 
+GC allocates a segment of memory (managed heap) to store and manage objects. One managed Heap for each process.
+Heap Object Generations: Garbage collection happens on a whole generation at once. Objects that survive gc are promoted to the next generation.
+When survival rate is high, it allocates more memory.
