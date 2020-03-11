@@ -1,3 +1,19 @@
 A Class is a a template which defines the data and behavior of all instances of that type.
 A class is defined using class declarations. Header {}
-Classes and structs are declared directly within a namespace and can be public or internal. Internal is the default. 
+Classes and structs are declared directly within a namespace and can be public or internal. Internal is the default. Derived Classes cant have greater
+accessibility than their base types.
+Members are everything that a class contains. They can be static or instance.
+And regular access modifiers:
+private - this class only
+protected - this class or derived classes
+internal - current assembly
+protected internal - this class, child classes, or classes within same assembly.
+public - access isnt limited.
+local variables - declared inside the body of a method
+
+reference parameter: declared with ref modifier. Used for passing arguments by reference.
+output parameter: declared with out modifier. Same as reference but by declaring an object with no value.
+parameter array: permits a variable number of arguments to be pathed to a method.
+
+Method overloading: having multiple methods with the same name but different parameters.
+An interface defines a contract that can be implemented by classes and structs. Interfaces can simulate multiple inheritance.
