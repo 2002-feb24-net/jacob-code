@@ -1,0 +1,3 @@
+A Class is a a template which defines the data and behavior of all instances of that type.
+A class is defined using class declarations. Header {}
+Classes and structs are declared directly within a namespace and can be public or internal. Internal is the default. 
