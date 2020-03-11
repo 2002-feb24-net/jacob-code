@@ -17,3 +17,8 @@ parameter array: permits a variable number of arguments to be pathed to a method
 
 Method overloading: having multiple methods with the same name but different parameters.
 An interface defines a contract that can be implemented by classes and structs. Interfaces can simulate multiple inheritance.
+
+Inheritance:
+A class can only inherit frome one class but multiple interfaces. 
+Access modifiers affect inheritance.
+Members of a base class that are not inherited are static and instance constructors.
