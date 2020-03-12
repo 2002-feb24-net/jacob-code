@@ -57,3 +57,13 @@ Boxing: When a value type is cast to an object. Boxing is implicit. object o = i
 Unboxing: extracts the value from the object. o = 123; i = (int)o ;
 Unboxing is explicit conversion from the type object to a value type or from an interface type to a 
 value type.
+
+Serialization:
+Taking important data, arranging it in a nice row, and sending it in binary.
+Formatting it so other processes can understand it.
+examples:
+-> Custom binary
+-> XML
+-> JSON
+C# objects -> JSON string -> write to a file (Serialization)
+read from the file -> JSON string -> C# objects (De-serialization or parsing)
