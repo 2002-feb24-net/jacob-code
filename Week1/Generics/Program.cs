@@ -6,9 +6,9 @@ namespace Generics
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) //Generic example
         {
-            //ArrayLists();
+            //ArrayLists(); (non generic)
 
             // whenever we use a type with <> at the end
             // that is a generic type
