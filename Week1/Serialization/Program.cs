@@ -8,6 +8,7 @@ namespace Serialization
 {
     class Program
     {
+        static string filePath = "../../../data.json";
         static void Main(string[] args)
         {
             // in >NET, for XML serialization, we have
@@ -18,13 +19,21 @@ namespace Serialization
             //  -DataContractSerializer
             //  -System.Text.Json (brand new)(we'll use this one today)
 
-            string filePath = "../../../data.json";
             List<Person> data = null;
             if(!File.Exists(filePath))
             {
                 data = GetInitialData();
                 string json = ConvertToJson(data);
-                WriteToFile(json);
+                try
+                {
+                    WriteToFile(json);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Fatal error");
+                    Console.WriteLine(ex.Message);
+                }
+                
             }
             else
             {
@@ -49,6 +58,11 @@ namespace Serialization
 
         static string ReadFromFile(string filePath)
         {
+            //using(var sr = new StreamReader(filePath))
+            //{
+            //    string text = sr.ReadToEnd();
+            //    return text;
+            //}
             var sr = new StreamReader(filePath);
             string text = sr.ReadToEnd();
             sr.Close();
@@ -61,11 +75,41 @@ namespace Serialization
 
         static void WriteToFile(string text)
         {
-            var file = new FileStream("../../../data.json", FileMode.Create);
-            //File.WriteAllText("../../../data.json",text);
-            byte[] data = Encoding.UTF8.GetBytes(text);
-            file.Write(data);
-            file.Close();
+            //exception handling is important for good user experience
+            //as well as data correctness etc
+
+            //opening a file is something that definitely could go wrong
+            //its code that we expect to sometimes throw an exception
+            //any code like that, we should put in a try {} block
+            FileStream file = null;
+            try
+            {
+                file = new FileStream("../../../data.json", FileMode.Create);
+                //File.WriteAllText("../../../data.json",text);
+                byte[] data = Encoding.UTF8.GetBytes(text);
+                file.Write(data);
+                file.Close();
+            }
+            //catch
+            //{
+            //   //we can catch ANY exception... this is bad practice
+            //}
+            catch (UnauthorizedAccessException ex)
+            {
+                //useful properties of the exception:
+                // Message, StackTrace, InnerException
+                Console.WriteLine($"Access to file {filePath} is not allowed by the OS: ");
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+                if(file!=null)
+                {
+                    //file.Close();
+                    file.Dispose();
+                }
+            }
         }
         static List<Person> GetInitialData()
         {

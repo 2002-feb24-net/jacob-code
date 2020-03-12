@@ -65,5 +65,16 @@ examples:
 -> Custom binary
 -> XML
 -> JSON
+-> 
 C# objects -> JSON string -> write to a file (Serialization)
 read from the file -> JSON string -> C# objects (De-serialization or parsing)
+
+validate:
+-if else
+-try catch
+flow:
+try->no exception->finally->next line
+try->exception->catch->finally->next line
+try->unhandled exception->finally->crash
+
+using statement is the same as a try finally that disposes variable if null
