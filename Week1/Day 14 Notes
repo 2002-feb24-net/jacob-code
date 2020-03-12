@@ -1,0 +1,59 @@
+static class: cannot be instantiated and cannot be inherited. 
+And can only have static members. Static members are shared across instances of a class.
+Non static can only be used through an object.
+Abstract classes are like halfway between an interface and a class.
+An abstract class can be inherited.
+Multiple interfaces can be inherited by a class. It makes it so the derived
+class must implement its members.
+A non abstract class can be inherited by a class and it inherits EVERYTHING
+and cannot be overriden.
+An abstact class can be inherited by a class and not everything has to be
+inherited. 
+interface: void X();
+abstract bas class: public abstract void X();
+
+virtual and abstract methods: allowed to be inherited and overriden.
+A class cant be virtual.
+Cant override a class but you can override a member/method.
+virtual provides implementation (a default method).
+abstract forces you to override and implement it.
+
+Classes have something in common. Use an interface.
+inherit base classes if they share similar behavior and more general aspects.
+Sealed class: A sealed class cannot be inherited/derived.
+Sealed member: A sealed member cannot be inherited/derived.
+partial classes are useful when combining classes. they are compiled together.
+Its definition is spread out but still one class. Useful for a computer generating
+one class and the other class being hard coded.
+"New" class should not be used.
+A constant cannot be a class.
+A constant member means it cannot be changed. Only used for primitives.
+A read only member can only be changed inside of its constructor. 
+It cannot be made into a new member after but it can be modified.
+(async we will talk about later)
+
+Casting and Type conversion:
+C# is statically typed at compile time. After a variable is declared, it cannot be declared again override
+assigned a value of another type unless that type is implicitly convertible to the variable's type.
+We use type conversions. There are two types:
+Implicit conversions: No special syntax required, is type safe, no data loss.
+Explicit conversions (casts): Explicit conversions require the cast operator (). Required when data
+may be lost in the conversion or when failure could occur.
+From int to double it is implicit. (small to big)
+From double to int it is explicit. (big to small)
+For numeric types you can use implicit when a value can be fit into the variable memory without being truncated.
+For integral types you can use implicit when the range of the source type is at least as big as the target type.
+For Reference types you can always use implicit conversion from one class to any of its direct or 
+indirect base classes or interfaces. No special syntax is necessary. (specific to general)
+Explicit conversion: If there is risk of losing information, perform a Cast. 
+A base type to a derived type. (it doesnt prevent the loss of data) (general to specific)
+Type Conversions Exceptions at run time: a type cast that fails at run time will cause an invalidcastexception
+to be thrown. the is operator enables you to test for compatibility. Boxing or unboxing. Not numeric conversions.
+The as operator explicitly converts the result of an expression to a given reference or nullable value type.
+as is like the short hand of is and does not return an exception.
+If a object is a subtype then it should be able to be used in every situation the base type is used.
+Everything is a subtype of an object.
+Boxing: When a value type is cast to an object. Boxing is implicit. object o = int i;
+Unboxing: extracts the value from the object. o = 123; i = (int)o ;
+Unboxing is explicit conversion from the type object to a value type or from an interface type to a 
+value type.
