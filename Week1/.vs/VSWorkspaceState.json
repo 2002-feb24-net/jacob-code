@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\2-csharp"
+    "\\2-csharp",
+    "\\2-csharp\\RockPaperScissors",
+    "\\2-csharp\\RockPaperScissors\\RockPaperScissors.App",
+    "\\2-csharp\\RockPaperScissors\\RockPaperScissors.Library"
   ],
-  "SelectedNode": "\\Day 13 Notes",
+  "SelectedNode": "\\2-csharp\\RockPaperScissors\\RockPaperScissors.App\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
