@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Serialization
 {
     class Program
     {
         static string filePath = "../../../data.json";
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             // in >NET, for XML serialization, we have
             //  - DataContractSerializer
@@ -26,7 +27,7 @@ namespace Serialization
                 string json = ConvertToJson(data);
                 try
                 {
-                    WriteToFile(json);
+                    await WriteToFileAsync(json);
                 }
                 catch(Exception ex)
                 {
@@ -38,14 +39,15 @@ namespace Serialization
             else
             {
                 //string jsonData = ReadFromFile(filePath);
-                string jsonData = File.ReadAllText(filePath);
+                string jsonData = await File.ReadAllTextAsync(filePath);
+                //string jsonData2 = await ReadFromFileAsync(filePath);
                 data = JsonSerializer.Deserialize<List<Person>>(jsonData);
                 // read JSON from file
                 // and deserialize it
             }
             ModifyPersons(data);
             string json2 = ConvertToJson(data);
-            WriteToFile(json2);
+            await WriteToFileAsync(json2);
         }
 
         static void ModifyPersons(List<Person> data)
@@ -56,7 +58,7 @@ namespace Serialization
             }
         }
 
-        static string ReadFromFile(string filePath)
+        async static Task<string> ReadFromFileAsync(string filePath)
         {
             //using(var sr = new StreamReader(filePath))
             //{
@@ -64,7 +66,13 @@ namespace Serialization
             //    return text;
             //}
             var sr = new StreamReader(filePath);
-            string text = sr.ReadToEnd();
+            Task<string> textTask = sr.ReadToEndAsync();
+            // at this point, the operation might have already started
+            string text = await textTask;
+            // the away keyword pauses this method right here
+            // while still letting other operations in the rest of the
+            // program continue
+            // (e.g. other ongoing Tasks)
             sr.Close();
             return text;
         }
@@ -73,7 +81,7 @@ namespace Serialization
             return JsonSerializer.Serialize(data);
         }
 
-        static void WriteToFile(string text)
+        static async Task WriteToFileAsync(string text)
         {
             //exception handling is important for good user experience
             //as well as data correctness etc
@@ -87,7 +95,7 @@ namespace Serialization
                 file = new FileStream("../../../data.json", FileMode.Create);
                 //File.WriteAllText("../../../data.json",text);
                 byte[] data = Encoding.UTF8.GetBytes(text);
-                file.Write(data);
+                await file.WriteAsync(data);
                 file.Close();
             }
             //catch

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.App", "RockPaperScissors.App\RockPaperScissors.App.csproj", "{2378618C-D405-4F03-8501-3764C3DDE888}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors.App", "RockPaperScissors.App\RockPaperScissors.App.csproj", "{2378618C-D405-4F03-8501-3764C3DDE888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.Library", "RockPaperScissors.Library\RockPaperScissors.Library.csproj", "{5E7CAFFB-2EFE-4785-BF57-77A8970C8FE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors.Library", "RockPaperScissors.Library\RockPaperScissors.Library.csproj", "{5E7CAFFB-2EFE-4785-BF57-77A8970C8FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{49C1776D-5526-4D2F-A6D9-A6BF26C14ECD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5E7CAFFB-2EFE-4785-BF57-77A8970C8FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E7CAFFB-2EFE-4785-BF57-77A8970C8FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E7CAFFB-2EFE-4785-BF57-77A8970C8FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C1776D-5526-4D2F-A6D9-A6BF26C14ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C1776D-5526-4D2F-A6D9-A6BF26C14ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C1776D-5526-4D2F-A6D9-A6BF26C14ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C1776D-5526-4D2F-A6D9-A6BF26C14ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

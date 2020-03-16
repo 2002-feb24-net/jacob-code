@@ -1,0 +1,75 @@
+When we are downloading (network) or disk I/O we should use async.
+
+async:
+while doing one thing, we could be doing other things
+parallel programming
+different processes are on different threads
+We do have a Thread class in C# but we should avoid directly using it
+We use Tasks instead. Running an operation while wanting to do other stuff too.
+
+async should not be void.
+non async:  void    anythingelse
+async:      Task    Task<anythingelse>
+
+Object Oriented Programming:
+OOP is a programming paradigm based on the concepts of objects which can contain data, in form of fields, and
+code in form of procedures (methods).
+A feature of an object is its objects methods.
+Four Pillars:
+Abstraction: The process of only showing the essential features of an objet to the outside world.
+Encapsulation: Wrapping data/functions into a single unit (class).
+Inheritance: Creating a new class from an exisiting class template. (subclass or super/base class)
+Polymorphism: "many forms". 
+
+Abstraction seperates relevant data from irrelevant details in order to simplify use.
+Encapsulation is the restricting of direct access to abstracted data."getters and setters"
+Inheritance: allows you to definae a child class that reuses the characteristics of a parent class
+Derived class inherits the base class.
+Inheritance and Access Modifiers:
+Access modifiers affect inheritance.
+Protected - only visible in derived class.
+Internal - visible only in the same assembly as the base class.
+Public - visible in derived classes and are part of derived class' public interface.
+Static and instance constructors are not inherited by the derived class.
+Inheritance "is a" inheritance. Interface 
+Polymorphism is when each derived class implements the same methods but in different ways.
+If a base class member is marked abstract, it must be defined in the derived class.
+
+SOLID:
+Acronym for five design principles:
+Single Responsibility: A class should only have a single responsibility. 
+Open-Closed Principle: Design our module.class in such a way that new functionality can be added only when
+new requirements are generated. A class should be open for extensions.
+Liskov Substitution Principle: You should be able to use any derived class instead of a parent class
+and have it behave in the same manner without modification. A derived class must be substitutable 
+for its base class.
+Interface Segregation Principle: Each interface should have a specific purpose/responsibility.
+A class shouldnt be forced to implement an interface when the class doesnt share the interfaces purpose.
+Dependency Inversion Principle: High level modules/classes implement business rule or logic in system front end.
+Low level modules/classes deal with more detailed operations. 
+We need to keep the high and low level modules loosely coupled as much as
+we can. We need to make both of them dependent on abstractions instead of knowing each other.
+
+Unit Testing: testing the smallest units of code/behavior independently.
+Integration testing: testing if units work together to produce the right result.
+third party:
+-xUnit
+-nUnit
+Microsoft:
+-MSTest
+
+Tests should be in a seperate project.
+KISS: Keep it simple stupid.
+
+We take projects and compile them together into assemblies (intermediate language)
+CLI: Common Language Infrastructure contains:
+VES: Virtual Execution system: runtime system for running mannaged code.
+Inside the VES we have a JIT Compiler that converts the Assemblies in CIL to native instructions.
+Standard Libraries:
+Base class Library + a couple extra things
+Common Type System: Defines semantics/rules for classes and members to be used.
+Managed Code means a garbage collector is taking care of resource management.
+Unmanaged stuff like files or network buffers implement IDisposable because
+they arent using a garbage collector and must be manually disposed.
+
+Go over the testing example.
