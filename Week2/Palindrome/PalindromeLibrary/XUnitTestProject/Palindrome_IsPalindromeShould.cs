@@ -10,6 +10,8 @@ namespace Palindrome.Tests
         {
             _palindrome = new PalindromeClass();
         }
+        //more edge casses
+        //what happens if you pass null or an empty string
 
         [Theory]
         [InlineData("nurses run")]
