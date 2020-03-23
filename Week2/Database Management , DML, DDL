@@ -1,0 +1,110 @@
+SQL is the language used for querying and maintaining the database.
+RDBMS - Relational Database Management System
+In Microsoft we use T-SQL.
+UPDATE,SET,WHERE
+SQL Command Type: DDL, DQL, DML, and DCL
+Specifically know DDL and DML
+DML - Insert, Delete, Update, Truncate
+Three most commmon keyword queries: Select, From. Where
+Select - Retrieves rows from database
+From - specifies the table
+Where - specifies the search conditions for the rows returned by the query.
+Queries are used to insert, retrieve, modify and delete data in a SQL Database.
+
+INSERT INTO table_name (column1,column2,...)
+VALUES (value1,value2,...);
+
+UPDATE table_name
+SET column1 = value1, column2 = value2,...
+WHERE condition;
+
+DELETE FROM table_name WHERE condition;
+
+DDL Data Definition Language defines the data strucute. Use these statements to create, alter, or drop data structures in a database.
+Alter, Create, Drop, Aggregate, Average, Count, Sum
+
+A transaction is something that implements the ACID properties.
+-- Atomic: indivisible. Either totally finished or doesnt make any changes at all
+-- Consistent: it shouldnt allow the DB constraints to be violated
+-- Isolated: even if we run multiple transactions at once, each one shouldnt have to worry about the others, their operations should be isolated from each other.
+-- Durable: a transaction is not complete until its been persisted to non volatile memory
+Allows you to rollback if an error is thrown.
+Bundles the statements together into a transaction.
+
+Isolation Levels:
+-read_uncommitted: allows dirty read (and everything else)
+-read_committed: prevents dirty read (but allows others)		(default in sql server)
+-repeatable: prevent non repeatable read and dirty read
+-serializable: prevents all
+
+Anomalies (issues that can come up in the absence of full isolation):
+-Dirty Read: When THIS transaction sees uncommitted data of another transaction.
+-NonRepeatable Read: Read the same row twice,see different things because another transaction committed new stuff.
+-Phantom read: run the same query twice, see new rows the second time because another transaction committed them.
+
+Functional Dependency:
+A relationship between two pieces of data or attributes
+X -> Y	(Y is dependent on X)
+According to the real world meaning of X and Y, for any example value of X, there's only one possible value of Y
+If two rows had the same X value... theyd have to also have the same Y value
+X and Y could each be sets of columns, not just individual columns
+
+Candidate Key (For a particular table or entity):
+A minimal set of columns/attributes that every other column is dependent on.
+(minimal meaning.. we cant remove any column for the set without breaking that condition)
+Often the set is just size 1 ( a key of one column)
+The values of any candidate key can uniquely identify that row.
+(if the key has multiple columns, we call it a composite key)
+
+When we actually implement a table, we choose on fo the candidate keys to actually identify the rows in practice, and call it the...
+Primary Key
+
+If other tables want to reference a row in this table theyll have a copy of our primary key called a foreign key.
+Foreign Key
+
+Other Anomalies:
+Update anomaly: with redundancy, updates can get inconsistent.
+delete anomaly: with deleting one piece of data, other data can disappear too.
+Insert Anomaly: Cant insert some data without also some other connected data.
+
+to address issues like these.. 
+Normal Forms:
+1NF: All elements should have atomic values. 
+No repeating groups in columns. 
+Every Row must be unique (aka there must be a primary key)
+
+2NF: 
+1NF and...
+All columns not part of any CK, must be fully dependent on every CK (no partial dependencies on half of a composite key) (this condition can only be violated if there are any composite keys)
+
+3NF:
+2NF and...
+All columns not part of any CK, must be fully dependent on every CK (no partial dependencies on half of a composite key) (this condition can only be violated if there are any composite keys in the first place)
+
+Entity Framework:
+
+Before Compile time:
+(Writing in SQL and C#)
+Code First:
+Dev writes DbContext, & Entity Classes, with configuration.
+Use migrations or EnsureCreated(), to push the data structure onto the SQL DB.
+Create the tables, columns, constraints, etc.
+Any time the data structure needs to change, change the code first, then go back to step 2.
+
+Database First:
+The DB already exists or the dev writes the SQL and makes it.
+We use reverse engineering to scaffold the DbContext and Entity classes.(code generation)
+Anytime the data structure needs to change, change the SQL first, then rescaffold the classes.
+
+
+Runtime:
+C#								SQL
+DbContext		Should Match	SQL tables
+-DbSets							Columns,Constraints,etc
+-Entities
+
+Save Changes -> Insert, Update, Delete (C# -> SQL)
+Queries -> Select, ToList() (SQL -> C#)
+
+
+
