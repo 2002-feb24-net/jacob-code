@@ -50,8 +50,8 @@ VALUES (3,3);
 
 
 --adding iphone
-INSERT INTO CC.Products(ID, Name, Price)
-VALUES ((SELECT Max(ID) FROM CC.Products) ,'IPhone',200);
+INSERT INTO CC.Products(Name, Price)
+VALUES ('IPhone',200);
 --adding Tina Smith
 INSERT INTO CC.Customers(Firstname, Lastname, CardNumber)
 VALUES ('Tina','Smith',42190571350);
@@ -62,7 +62,6 @@ VALUES (4,4);
 SELECT o.* FROM CC.Orders as o INNER JOIN CC.Customers as c ON o.CustomerID = c.ID
 		WHERE Firstname = 'Tina' AND Lastname = 'Smith';
 --Report all revenue from Iphone
-SELECT COUNT((SELECT ID FROM CC.Products WHERE Name = 'IPhone'))*(SELECT Price FROM CC.Products WHERE Name = 'IPhone') FROM CC.Orders;
-INSERT INTO CC.Products(ID, Name, Price)
+SELECT COUNT(ProductID) as Stock FROM CC.Orders WHERE ProductID = (SELECT ID FROM CC.Products WHERE Name = 'IPhone');
 --increase price of IPhone
-VALUES ((SELECT ID FROM CC.Products WHERE Name = 'IPhone') ,'IPhone',250);
+UPDATE CC.Products SET Price = 250 WHERE Name = 'IPhone';
