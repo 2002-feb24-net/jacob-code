@@ -1,0 +1,58 @@
+MVC: Model View Controller architectural pattern seperates an application into three main groups of components.
+Models, Views, and controllers. This pattern helps achieve seperation of conncerns.
+An application should be partitioned based on the kinds of work it performs.
+The MVC Pattern seperates an application into: A controller, Models, and views.
+
+User requests are routed to a controller which works with the model to preform user actions/retrieve results of queries.
+The controller then chooses the appropriate view and provides it with the model data it requires to display results to the user.
+
+Model: represents the state fo the application and any business logic/operations that should be preformed by it.
+Business Logic and implementation logic (dbcontext) are in the model. Strongly typed views = ViewModel types.
+
+Views: responsible for presenting content through the user interface. Views use the razor view engine to embed .net code in html markup.
+Logic in views should relate to presenting content. If logic is necessart, use viewcomponent or viewmodel to simplify the view.
+
+Controller: are the componenets that handle the user input, work with the model, and select a view to render.
+
+ASP NET Core MVC framework is a lightweight framework optomized for ASP.NET Core but using the MVC architectural pattern.
+It provides a patternsbased way to build dynamic websites that enables a clean seperation of concerns.
+Full control over markup, supports TDDfriendly development, uses latest web standards.
+
+
+HTTP REQUEST LIFE STYLE:
+DNS: Is essentially a directory of names and IP addresses. It translates domain names to numerical IP addresses.
+
+HTTP Sessions consist of theee phases.
+1. The client establishes a TCP connection.
+2. The client sends its Request and waits for the Response.
+3. The server processes the request and sends back its Response with a status code and appropriate data.
+
+Client establishes connection: TCP default port is 80, The URL contains both the domain name and port number. The client server model does not allow the server to send data to client without an
+explicit request.
+
+Sending a Request: On connection, the user can send a request. A client rquest consists of text directives, seperated by CRLF (carriage, return, line feed), divided into three blocks:
+Line 1 - Request Method (GET)
+Line 2 - The Absolute url doc path without protocol or domain name ("/doc/test.html")
+Line 3 - The HTTP Protocol version (HTTP/1.1)
+Example = GET "/doc/test.html" HTTP/1.1
+The rest of the request is a request message header that contains info about what type of data is appropriate and other data that may alter behaviour.
+Then an empty line and an optional data block (POST).
+
+Response: A server Resoinse is formed of text directives, separated by CRLF, divided into three blocks:
+Line 1 - Status line: Acknowledgement of the http version used and a request status code
+Subsequent lines represent specific http headers giving the client info about data type, size, compression algorithm, caching, etc and ends with an empty line
+
+Request Methods indicate the desired action to be preformed on the force.
+Request Commands include: GET, POST, PUT, DELETE, TRACE, HEAD, CONNECT, OPTIONS.
+Post sends data to a server. Get retrieves data. PUT Replaces all current representations of the target resource with the request payload. Delete deletes the specified source.
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+HTTP Response Status Codes:
+HTTP response status codes give the result of an HTTP request. Responses are grouped in five classes:
+Informational: 1xx
+Success: 2xx
+Redirection: 3xx
+Client Error: 4xx
+Server Error: 5xx
+
+e.g. 200 OK

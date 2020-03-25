@@ -1,0 +1,10 @@
+HTML FUNDAMENTALS:
+HTML is not a programming language; it is a markup language that defines the structure of your webpage.
+HTML consists of a series of elements which enclose different parts of content.
+HTML 5: uses tags to help you add structural components
+CSS: changes style rather than its content. CSS oversees the way the content looks on a page and waht goes on it to compliment that content.
+
+CSS FUNDAMENTALS:
+CSS is stored in a stylesheet which is a .css file seperate from the html file
+CSS Syntax: Selector {Declarations/Rule Sets}
+

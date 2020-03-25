@@ -1,0 +1,66 @@
+﻿<style >
+
+#cat1{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: 10px solid red;
+}
+
+#cat2 {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    left: 35%;
+    top: 0px;
+    right: 50%;
+    border: 10px solid #f88379;
+}
+#cat3 {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 10px solid #f88379;
+}
+
+#cat4 {
+    width: 35%;
+    height: 35%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: 10px solid #f88379;
+}
+h1 {
+    position: absolute;
+    left:40%;
+    right:40%;
+    top: 45%;
+}
+ol {
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    top: 50%;
+    border: 10px solid black;
+    padding: 10px;
+}
+label {
+    border: 2px solid black;
+}
+.links {
+    left: 40%;
+    right: 40%;
+    position: absolute;
+    top: 65%;
+}
+#coolgif {
+    left: 0%;
+    position: absolute;
+    top: 90%;
+}
+</style >
