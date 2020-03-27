@@ -2,3 +2,4 @@ bin/
 obj/
 .vs/
 SecretConfiguration.cs
+appsettings.json
