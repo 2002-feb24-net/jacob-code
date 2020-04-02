@@ -41,12 +41,9 @@ namespace MvcProjectStarter.Migrations
                     b.Property<string>("title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("year")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("id");
 
-                    b.ToTable("Songs");
+                    b.ToTable("Song");
                 });
 #pragma warning restore 612, 618
         }

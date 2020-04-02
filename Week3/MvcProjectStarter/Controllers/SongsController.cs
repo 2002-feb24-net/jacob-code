@@ -22,7 +22,7 @@ namespace MvcProjectStarter.Controllers
         // GET: Songs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Songs.ToListAsync());
+            return View(await _context.Song.ToListAsync());
         }
 
         // GET: Songs/Details/5
@@ -33,7 +33,7 @@ namespace MvcProjectStarter.Controllers
                 return NotFound();
             }
 
-            var song = await _context.Songs
+            var song = await _context.Song
                 .FirstOrDefaultAsync(m => m.id == id);
             if (song == null)
             {
@@ -54,7 +54,7 @@ namespace MvcProjectStarter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,title,genre,artist,year,album,ReleaseDate")] Song song)
+        public async Task<IActionResult> Create([Bind("id,title,genre,artist,album,ReleaseDate")] Song song)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace MvcProjectStarter.Controllers
                 return NotFound();
             }
 
-            var song = await _context.Songs.FindAsync(id);
+            var song = await _context.Song.FindAsync(id);
             if (song == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace MvcProjectStarter.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,title,genre,artist,year,album,ReleaseDate")] Song song)
+        public async Task<IActionResult> Edit(int id, [Bind("id,title,genre,artist,album,ReleaseDate")] Song song)
         {
             if (id != song.id)
             {
@@ -124,7 +124,7 @@ namespace MvcProjectStarter.Controllers
                 return NotFound();
             }
 
-            var song = await _context.Songs
+            var song = await _context.Song
                 .FirstOrDefaultAsync(m => m.id == id);
             if (song == null)
             {
@@ -139,15 +139,15 @@ namespace MvcProjectStarter.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var song = await _context.Songs.FindAsync(id);
-            _context.Songs.Remove(song);
+            var song = await _context.Song.FindAsync(id);
+            _context.Song.Remove(song);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool SongExists(int id)
         {
-            return _context.Songs.Any(e => e.id == id);
+            return _context.Song.Any(e => e.id == id);
         }
     }
 }

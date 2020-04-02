@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using MvcProjectStarter.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MvcProjectStarter.Data;
 
 namespace MvcProjectStarter.Models
 {
@@ -12,41 +12,44 @@ namespace MvcProjectStarter.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using(var context = new MvcSongContext(serviceProvider.GetRequiredService<DbContextOptions<MvcSongContext>>()))
+            using (var context = new MvcSongContext(serviceProvider.
+                GetRequiredService<DbContextOptions<MvcSongContext>>()))
             {
-                if(context.Songs.Any())
+                if (context.Song.Any())
                 {
-                    return;//songs in the DB. We are good to go
+                    return;//song's in the DB. We are good to go.
                 }
 
-                context.Songs.AddRange(
-                    new Song
-                    { title = "Don't stop Believin'",
-                        genre = "Rock",
-                        artist = "Journey",
-                        album = "Unknown",
-                        ReleaseDate = DateTime.Parse("1981-3-13")
-                    },
+                context.Song.AddRange(
                     new Song
                     {
-                        title = "Thriller",
+                        title = "Don't Stop Believin'",
+                        genre = "Rock",
+                        artist = "Jouney",
+                        album = "Escape",
+                        ReleaseDate = DateTime.Parse("1981-3-13")
+                    },
+
+                    new Song
+                    {
+                        title = "Thriller'",
                         genre = "Rock",
                         artist = "Michael J",
                         album = "Thriller",
                         ReleaseDate = DateTime.Parse("1981-4-14")
                     },
+
                     new Song
                     {
-                        title = "Eye of the Tiger",
+                        title = "Eye of the Tiger'",
                         genre = "Rock",
                         artist = "Survivor",
-                        album = "Unknown",
+                        album = "unknown",
                         ReleaseDate = DateTime.Parse("1985-3-13")
                     }
-                    );
+                );
                 context.SaveChanges();
             }
-
         }
     }
 }

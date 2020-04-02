@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -21,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.artist)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.year)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.album)
@@ -45,9 +41,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.artist)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.year)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.album)

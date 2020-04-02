@@ -1,0 +1,1 @@
+Views use html and razor to make a cshtml file.

@@ -1,0 +1,89 @@
+Software Development lifecycle (SDLC)
+
+Waterfall Model:
+1. Requirements
+2. Design
+3. Build/code
+4. Test
+5. Deploy/release
+Its rigid, once one phase is done it's done.
+Too rigid for most software projects.
+High Accountability/Documentation.
+If requirements can be known %100 ahead of time.
+For info security, maybe the team that codes and tests doesnt have access to the info that went into the design.
+
+V Model is a type of SDLC model where processes execute in a sequential manner in a v shape.
+Its a Verification and Validation Model.
+Like Waterfall but more hierarchical structure to the design and testing.
+
+Big Bang Model:
+1. Requirements (?)
+2. Build the night before its due.
+This is for Rapid Prototyping.
+
+Iterative Models:
+we want to iterate, be able to go back and make changes, respond ot feedback.
+Rather, we'll expect that we will neeed to, rather than being caught off guard.
+
+Spiral Model:
+Several mini Waterfalls.
+Be able to react to changes more quickly and go back.
+
+
+
+
+Agile Methodology:
+-Continually seek user feedback and feed it back in to dev
+-split up our requirements into relatively independent user stories
+and each one can be worked on in parallel.
+-Speed over careful planning and documentation
+-everyone involved in the project communicating
+
+Examples of Agile:
+-Scrum
+-Kanban
+-CMMI
+These are concrete sets of practices to achieve the goals of Agile.
+
+Agile Model -
+
+Scrum:
+Define each iteration as a sprint.
+Sprint lasts 2 to 6 weeks.
+Every sprint begins with a planning meeting.
+We decide which user stories we're going to tackle before the end of the sprint.
+Involves estimatiing how much effort each user story will take.
+We often use a point system 1,2,3 roughly up to 8 points.
+Capacity: Estimated number of points we can complete.
+Velocity: Actual number of points we completed.
+
+During Sprint: 
+	Each user story will be tracked on a project board (scrum board). It will move from 'not started' from design, build, test, deploy independently of other stories.
+	Daily standup meeting aka scrum meeting:
+		Each person says 3 things:
+		1. What they did in past day
+		2. What they will do this enxt day
+		3. Blockers to #2 (waiting for a resource or document to be done)
+	The scrum meetings and the scrum board are managed by the scrum master.
+	At the end of the sprint, we have the sprint retrospective/review.
+	A meeting for reflection/evaluation.
+
+
+Stakeholder - Anyone who has any interest in the project: Devs, User, Etc.
+
+User Story- A specific thing the user can do with what results it should have. (no implementation details)
+
+
+Kanban:
+	No sprints
+	More ambitious in moving further from waterfall
+	Continuous planning
+	Continuous coding
+	Continuous evaluating and adapting
+	kanban board(project board)
+	Kanban focuses on limiting work in progress to handle the bottlenecks before they occur.
+
+CMMI:
+	Very process-heavy
+	Several Different Levels
+	Agile + extra accountability, documentation, standardization, etc.
