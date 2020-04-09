@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using NotesService.Api.Controllers.Models.NewFolder;
+using NotesService.Api.Repositories;
 
 namespace NotesService.Api
 {
@@ -46,8 +46,7 @@ namespace NotesService.Api
             app.UseAuthorization();
 
             // with APIs, as opposed to MVC, we use attribute routing in our controller classes,
-            // rather than global/conventional routing here in the startup class
-
+            // rather than global/conventional routing here in the Startup class.
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

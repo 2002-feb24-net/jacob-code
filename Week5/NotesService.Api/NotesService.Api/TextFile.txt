@@ -1,0 +1,31 @@
+﻿/api/notes
+    GET: get all notes
+    POST: create a new note
+
+    /api/notes/{id}
+        GET: get this note
+        PUT: update this note
+        DELETE: delete this note
+
+/api/user
+    GET: get all users
+    POST: create a new user
+
+    /api/user/{id}
+        GET: get this user
+        PUT: update this user
+        DELETE: delete this user
+
+    /api/user/{name}
+        GET: get this user
+        PUT: update this user
+        DELETE: delete this user
+
+/api/tags
+    GET: get all tags
+    POST: create a new tag
+
+    /api/tags/{id}
+        GET: get this tag
+        PUT: update this tag
+        DELETE: delete this tag
