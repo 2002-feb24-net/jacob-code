@@ -1,0 +1,9 @@
+Typescript notes:
+tsc <file> (compiles typescript to js)
+tsc --init (makes config file)
+change target in init file to es6
+change strict to true
+
+ng new (makes new angular project)
+npm install
+npx ng build (build angular)
